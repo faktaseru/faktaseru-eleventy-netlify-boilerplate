@@ -41,3 +41,30 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-bottom: 1rem;
 }
+/* === Navbar Styles === */
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 2rem 0;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar li a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar li a:hover,
+.navbar li a[aria-current="page"] {
+  color: #007acc;
+  border-bottom: 2px solid #007acc;
+}
