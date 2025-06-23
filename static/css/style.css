@@ -65,6 +65,6 @@ p {
 
 .navbar li a:hover,
 .navbar li a[aria-current="page"] {
-  color: #007acc;
-  border-bottom: 2px solid #007acc;
+  color: #ff6600;
+  border-bottom: none;
 }
