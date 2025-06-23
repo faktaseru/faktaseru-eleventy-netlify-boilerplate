@@ -14,15 +14,22 @@ const Post = createClass({
           <h1>${entry.getIn(["data", "title"], null)}</h1>
           <p>
             <small>
-              <time
-                >${
-                  format(
-                    entry.getIn(["data", "date"], new Date()),
-                    "dd MMM, yyyy"
-                  )
-                }</time
-              >
-              ${" by Author"}
+              <time>
+                  ${
+                    (() => {
+                      const date = entry.getIn(["data", "date"]);
+                      if (!date) return "No date";
+                      try {
+                        return format(new Date(date), "dd MMM, yyyy");
+                      } catch (e) {
+                        return "Invalid date";
+                      }
+                    })()
+                  }
+              </time>
+              
+             ${` by ${entry.getIn(["data", "author"], "Author")}`}
+
             </small>
           </p>
 
